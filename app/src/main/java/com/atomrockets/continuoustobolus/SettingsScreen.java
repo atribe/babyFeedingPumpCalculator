@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class SettingsScreen extends Activity{
+public class SettingsScreen extends Activity {
 	//---Database---
 		private DBAdapter db = new DBAdapter(this);
 		
@@ -20,10 +20,8 @@ public class SettingsScreen extends Activity{
 		private Button reset_button, submit_button;
 		private RadioGroup radioGroup_units;
 		
-	protected void onCreate(Bundle savedInstanceState) 
-    {
-		try
-    	{
+	protected void onCreate(Bundle savedInstanceState) {
+		try {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.settings);
 	        
@@ -38,13 +36,13 @@ public class SettingsScreen extends Activity{
 	        
 	        //---Capturing all the EditTexts---
 	        cal_per_day_input = (EditText)findViewById(R.id.cal_per_day_input);
-	        	cal_per_day_input.setText(db.getOptionValue("neededCalPerKgDay").toString());
+			cal_per_day_input.setText(db.getOptionValue("neededCalPerKgDay").toString());
 	        milk_provides =(EditText)findViewById(R.id.milk_provides);
-	        	milk_provides.setText(db.getOptionValue("milkProvidesCalPerOz").toString());
+			milk_provides.setText(db.getOptionValue("milkProvidesCalPerOz").toString());
         	editText_maxDuration =(EditText)findViewById(R.id.editText_maxDuration);
-	        	editText_maxDuration.setText(db.getOptionValue("maxDuration").toString());
+			editText_maxDuration.setText(db.getOptionValue("maxDuration").toString());
         	editText_maxStoppage=(EditText)findViewById(R.id.editText_maxStoppage);
-        		editText_maxStoppage.setText(db.getOptionValue("maxStoppage").toString());
+			editText_maxStoppage.setText(db.getOptionValue("maxStoppage").toString());
 	        	
 	        //---Capturing all the Buttons---
 	        reset_button = (Button)findViewById(R.id.button_reset);
@@ -55,46 +53,40 @@ public class SettingsScreen extends Activity{
 	        //---Capturing all radioButtons---
 	        radioGroup_units = (RadioGroup)findViewById(R.id.radioGroup1);
 
-	        if(db.getOptionValue("units").toString().equals("SI"))
-	        	radioGroup_units.check(R.id.radio_unit1); //SI units
-	        else 
-	        	radioGroup_units.check(R.id.radio_unit2); //Imperial
-	        	
+	        if(db.getOptionValue("units").toString().equals("SI")) {
+				radioGroup_units.check(R.id.radio_unit1); //SI units
+			} else {
+				radioGroup_units.check(R.id.radio_unit2); //Imperial
+			}
+
 	        radioGroup_units.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-				
+
 				public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-					switch(checkedId)
-					{
+					switch(checkedId) {
 					case R.id.radio_unit1:
-						try
-						{
+						try {
 							db.open();
 							db.insertOption("units", "SI");
 							db.close();
-			        		
-						}
-						catch (Exception ex)
-						{
+
+						} catch (Exception ex) {
 							Context context = getApplicationContext();
 					      	  CharSequence text = ex.toString();
 					      	  int duration = Toast.LENGTH_LONG;
-	
+
 					      	  Toast toast = Toast.makeText(context, text, duration);
 					      	  toast.show();
 					      	  System.out.println(ex.getMessage());
 						}
 						break;
 					case R.id.radio_unit2:
-						try
-						{
+						try {
 							db.open();
 							db.insertOption("units", "Imperial");
 							db.close();
-			        		
-						}
-						catch (Exception ex)
-						{
+
+						} catch (Exception ex) {
 							Context context = getApplicationContext();
 					      	  CharSequence text = ex.toString();
 					      	  int duration = Toast.LENGTH_LONG;
@@ -105,12 +97,9 @@ public class SettingsScreen extends Activity{
 						}
 						break;
 					}
-					
 				}
 			});
-    	}
-		catch (Exception ex)
-        {
+    	} catch (Exception ex) {
       	  Context context = getApplicationContext();
       	  CharSequence text = ex.toString();
       	  int duration = Toast.LENGTH_LONG;
@@ -120,26 +109,23 @@ public class SettingsScreen extends Activity{
       	  System.out.println(ex.getMessage());
         }
     }
+
 	private OnClickListener mAddListener = new OnClickListener()
 	{
 		public void onClick(View v)
     	{
 			Bundle bundle = new Bundle();
-        	switch(v.getId())
-        	{
+        	switch(v.getId()) {
         	case R.id.button_reset:
         		db.open();
         		
-        		try
-        		{
+        		try {
         			db.insertOption("neededCalPerKgDay", 120);
         			db.insertOption("milkProvidesCalPerOz", 22);
         			db.insertOption("units", "SI");
         			db.insertOption("maxDuration", "180");
         			radioGroup_units.check(R.id.radio_unit1);
-        		}
-        		catch (Exception ex)
-        		{
+        		} catch (Exception ex) {
         			Context context = getApplicationContext();
 					CharSequence text = ex.toString();
 					int duration = Toast.LENGTH_LONG;
@@ -154,14 +140,11 @@ public class SettingsScreen extends Activity{
         	case R.id.button_submit:
 				db.open();
         		
-        		try
-        		{
+        		try {
         			db.insertOption("neededCalPerKgDay", cal_per_day_input.getText().toString());
         			db.insertOption("milkProvidesCalPerOz", milk_provides.getText().toString());
         			db.insertOption("maxDuration", editText_maxDuration.getText().toString());
-        		}
-        		catch (Exception ex)
-        		{
+        		} catch (Exception ex) {
         			Context context = getApplicationContext();
 					CharSequence text = ex.toString();
 					int duration = Toast.LENGTH_LONG;
@@ -181,13 +164,11 @@ public class SettingsScreen extends Activity{
 	};
 	
 	@Override
-	public void onBackPressed()
-	{
+	public void onBackPressed() {
 		Bundle bundle = new Bundle();
 		Intent mIntent = new Intent();
-        mIntent.putExtras(bundle);
-        setResult(RESULT_OK, mIntent);
-        finish();
+		mIntent.putExtras(bundle);
+		setResult(RESULT_OK, mIntent);
+		finish();
 	}
-	
 }

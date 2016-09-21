@@ -30,22 +30,19 @@ public class DBAdapter {
 	private DatabaseHelper DBHelper;
     private SQLiteDatabase db;
     
-    public DBAdapter(Context ctx)
-    {
+    public DBAdapter(Context ctx) {
         this.context = ctx;
         DBHelper = new DatabaseHelper(context);
     }
 
-	private static class DatabaseHelper extends SQLiteOpenHelper
-    {
+	private static class DatabaseHelper extends SQLiteOpenHelper {
         DatabaseHelper(Context context)
         {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
         }
 
         @Override
-        public void onCreate(SQLiteDatabase db)
-        {
+        public void onCreate(SQLiteDatabase db) {
             db.execSQL(DATABASE_CREATE);
             
             //---Setting default options in the DB, used in db creation only---
@@ -81,8 +78,7 @@ public class DBAdapter {
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion,
-                              int newVersion)
-        {
+                              int newVersion) {
             Log.w(TAG, "Upgrading database from version " + oldVersion
                   + " to "
                   + newVersion + ", which will destroy all old data");
@@ -92,58 +88,46 @@ public class DBAdapter {
     }
 
     //---opens the database---
-    public DBAdapter open() throws SQLException
-    {
+    public DBAdapter open() throws SQLException {
     	Log.v(TAG, "Getting the Writable Database with the DBHelper");
         db = DBHelper.getWritableDatabase();
         return this;
     }
 
     //---closes the database---
-    public void close()
-    {
-        DBHelper.close();
+    public void close() {
+		DBHelper.close();
     }
     
     //---insert option into database---
-    public long insertOption(String optionName, String optionValue)
-    {
-    	if(!optionIsSet(optionName))
-    	{
+    public long insertOption(String optionName, String optionValue) {
+    	if(!optionIsSet(optionName)) {
 	    	ContentValues initialValues = new ContentValues();
 	    	initialValues.put(KEY_OPTIONNAME, optionName);
 	    	initialValues.put(KEY_OPTIONVALUE, optionValue);
 	    	return db.insert(DATABASE_TABLE, null, initialValues);
-    	}
-    	else
-    	{
+    	} else {
     		ContentValues initialValues = new ContentValues();
 	    	initialValues.put(KEY_OPTIONNAME, optionName);
 	    	initialValues.put(KEY_OPTIONVALUE, optionValue);
 	    	return db.update(DATABASE_TABLE, initialValues, KEY_OPTIONNAME + "=" + "?", new String[] {optionName});
     	}
     }
-    public long insertOption(String optionName, int optionValue)
-    {
+    public long insertOption(String optionName, int optionValue) {
     	String optionValueStr=Integer.toString(optionValue);
     	return insertOption(optionName,optionValueStr);
     }
-    public String getOptionValue(String optionName)
-    {
+    public String getOptionValue(String optionName) {
     	Cursor c = db.query(DATABASE_TABLE,new String[] {KEY_OPTIONVALUE},KEY_OPTIONNAME + "=" + "?", new String[] {optionName}, null, null, null);
     	Cursor cursor  = c;
     	c.close();
     	
-    	if(cursor.getCount()>0)
-    	{
-	    	if(cursor.moveToFirst())
-			{
+    	if(cursor.getCount()>0) {
+	    	if(cursor.moveToFirst()) {
 				return cursor.getString(0);
 			}
 			return cursor.getString(0);
-    	}
-    	else
-    	{
+    	} else {
     		return "";
     	}
     }
@@ -152,9 +136,10 @@ public class DBAdapter {
     	Cursor c = db.query(DATABASE_TABLE,new String[] {KEY_OPTIONVALUE},KEY_OPTIONNAME + "=" + "?", new String[] {optionName}, null, null, null);
     	Cursor cursor  = c;
     	c.close();
-    	if(cursor.getCount()>0)
-    		return true;
-    	else
-    		return false;
+    	if(cursor.getCount()>0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
