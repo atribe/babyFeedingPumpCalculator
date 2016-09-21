@@ -1,4 +1,4 @@
-package com.atomrockets.continuoustobolus;
+package com.atomrockets.babyFeedingPumpCalculator;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -119,27 +119,36 @@ public class DBAdapter {
     }
     public String getOptionValue(String optionName) {
     	Cursor c = db.query(DATABASE_TABLE,new String[] {KEY_OPTIONVALUE},KEY_OPTIONNAME + "=" + "?", new String[] {optionName}, null, null, null);
-    	Cursor cursor  = c;
-    	c.close();
+
+        String optionValue = "";
     	
-    	if(cursor.getCount()>0) {
-	    	if(cursor.moveToFirst()) {
-				return cursor.getString(0);
+    	if(c.getCount()>0) {
+	    	if(c.moveToFirst()) {
+                optionValue = c.getString(0);
 			}
-			return cursor.getString(0);
+            optionValue = c.getString(0);
     	} else {
-    		return "";
+            optionValue = "";
     	}
+
+        c.close();
+
+        return optionValue;
     }
     private boolean optionIsSet(String optionName)
     {
     	Cursor c = db.query(DATABASE_TABLE,new String[] {KEY_OPTIONVALUE},KEY_OPTIONNAME + "=" + "?", new String[] {optionName}, null, null, null);
-    	Cursor cursor  = c;
-    	c.close();
-    	if(cursor.getCount()>0) {
-            return true;
+
+        boolean optionSet = false;
+
+    	if(c.getCount()>0) {
+            optionSet = true;
         } else {
-            return false;
+            optionSet = false;
         }
+
+        c.close();
+
+        return optionSet;
     }
 }

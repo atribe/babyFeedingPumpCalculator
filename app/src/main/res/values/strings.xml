@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Baby Feeding Rate Calculator</string>
+    <string name="app_name">Baby Feeding Pump Calculator</string>
     <string name="splashDescription">AtomRockets Labs Logo</string>
     <string name="text_inputweight_SI">Child\'s Weight (kg):</string>
     <string name="text_inputweight_US">Child\'s Weight (lb):</string>

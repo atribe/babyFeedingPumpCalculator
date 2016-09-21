@@ -1,4 +1,4 @@
-package com.atomrockets.continuoustobolus;
+package com.atomrockets.babyFeedingPumpCalculator;
 
 import android.app.Activity;
 import android.content.Context;
