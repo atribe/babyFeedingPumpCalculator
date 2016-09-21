@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/widget33"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	style="@style/page_background"
+	>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/group_vertlinearlayout"
+    android:layout_height="match_parent" >
+    
+    <ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/widget33"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	style="@style/page_background"
+	>
+	<LinearLayout
+	android:id="@+id/widget47"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	>
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/group_label"
+        android:text="@string/Calories_needed_per_day" />
+
+    <EditText
+        android:id="@+id/cal_per_day_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" 
+        style="@style/textedits">
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/group_label"
+        android:text="@string/Milk_Provides" />
+    
+    <EditText
+        android:id="@+id/milk_provides"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" 
+        style="@style/textedits">
+    </EditText>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/group_label"
+        android:text="@string/Units" />
+
+
+		<RadioGroup
+        android:id="@+id/radioGroup1"
+        style="@style/group_label" 
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_unit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/Unit1" />
+
+        <RadioButton
+            android:id="@+id/radio_unit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/Unit2" />
+    </RadioGroup>
+
+		<TextView
+        android:id="@+id/textView4"
+        style="@style/group_label"
+        android:text="@string/settings_MaxDurationLabel" />
+    
+	    <EditText
+	        android:id="@+id/editText_maxDuration"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="numberDecimal" 
+	        style="@style/textedits">
+	    </EditText>
+	    
+	    <TextView
+        android:id="@+id/textView4"
+        style="@style/group_label"
+        android:text="@string/settings_MaxStoppageLabel" />
+    
+	    <EditText
+	        android:id="@+id/editText_maxStoppage"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="numberDecimal" 
+	        style="@style/textedits">
+	    </EditText>
+		
+</LinearLayout>
+</ScrollView>
+
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Submit" />
+
+    <Button
+        android:id="@+id/button_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Reset" />
+
+</LinearLayout>
+</ScrollView>

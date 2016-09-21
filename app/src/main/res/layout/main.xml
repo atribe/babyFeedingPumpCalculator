@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/widget33"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+style="@style/page_background"
+>
+<LinearLayout
+android:id="@+id/widget47"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:text="@string/InputHeader" 
+        style="@style/group_header"/>
+    
+<LinearLayout
+android:id="@+id/input_group"
+style="@style/group_vertlinearlayout"
+>
+<TextView
+android:id="@+id/weight_input_label"
+android:text="@string/text_inputweight_SI"
+style="@style/group_label"
+>
+</TextView>
+
+<EditText
+    android:id="@+id/editText_weight"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:inputType="numberDecimal"
+    android:imeOptions="actionDone" 
+    style="@style/textedits">
+</EditText>
+
+<TextView
+android:id="@+id/widget46"
+android:text="@string/text_feedduration"
+style="@style/group_label" />
+
+<TextView
+android:id="@+id/textView_durationText"
+style="@style/feed_duration_text"/>
+
+<SeekBar
+    android:id="@+id/seekBar_duration"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:progressDrawable="@drawable/seekbar_progress"
+    android:thumb="@drawable/babybottle" />
+
+<requestFocus/>
+
+<TextView
+android:id="@+id/widget49"
+android:text="@string/text_nightstoppageDuration"
+style="@style/group_label" />
+
+<TextView
+android:id="@+id/textView_stoppageDurationText"
+style="@style/feed_duration_text"/>
+
+<SeekBar
+    android:id="@+id/seekBar_stoppageDuration"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:progressDrawable="@drawable/seekbar_progress"
+    android:thumb="@drawable/babybottle" />
+
+</LinearLayout>
+
+<Button
+    android:id="@+id/button_calculate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/Btext_calculate" />
+
+<TextView
+    android:id="@+id/textView2"
+    android:text="@string/ResultsHeader" 
+    style="@style/group_header" />
+<LinearLayout
+android:id="@+id/result_group"
+style="@style/group_vertlinearlayout"
+>
+
+<TextView
+    android:id="@+id/textview_result_totalVolume_label"
+    android:text="@string/DefaultResultValue"
+    style="@style/group_label" />
+<TextView
+    android:id="@+id/textview_result_totalVolume"
+    android:text=""
+    style="@style/group_item" />
+<TextView
+    android:id="@+id/textview_result_feedRate_label"
+    android:text=""
+    style="@style/group_label" />
+<TextView
+    android:id="@+id/textview_result_feedRate"
+    android:text=""
+    style="@style/group_item" />
+</LinearLayout>
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/widget33"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+>
+<LinearLayout
+android:id="@+id/widget32"
+style="@style/group_vertlinearlayout"
+>
+
+<TextView
+    android:id="@+id/textView1"
+    style="@style/group_header"
+    android:text="@string/HowToUseHeader" />
+
+<TextView
+android:id="@+id/textView_about"
+style="@style/group_label"
+android:text="@string/HowToUse"
+>
+</TextView>
+
+<TextView
+    android:id="@+id/textView2"
+    style="@style/group_header"
+    android:text="@string/AboutHeader" />
+
+<TextView
+    android:id="@+id/textView3"
+    style="@style/group_label"
+    android:text="@string/About" />
+
+<TextView
+    android:id="@+id/textView4"
+    style="@style/group_header"
+    android:text="@string/DisclaimerHeader" />
+
+<TextView
+    android:id="@+id/textView5"
+    style="@style/group_label"
+    android:text="@string/Disclaimer" />
+
+<TextView
+    android:id="@+id/textView_disclaimerHeader"
+    style="@style/group_header"
+    android:text="@string/DonationsHeader" />
+
+<TextView
+    android:id="@+id/textView_disclaimer"
+    style="@style/group_label"
+    android:text="@string/Donations" />
+
+<TextView
+    android:id="@+id/textView6"
+    style="@style/group_header"
+    android:text="@string/CreditsHeader" />
+
+<TextView
+    android:id="@+id/textView7"
+    style="@style/group_label"
+    android:text="@string/Credits" />
+
+</LinearLayout>
+</ScrollView>

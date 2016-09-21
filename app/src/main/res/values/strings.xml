@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Baby Feeding Rate Calculator</string>
+    <string name="splashDescription">AtomRockets Labs Logo</string>
+    <string name="text_inputweight_SI">Child\'s Weight (kg):</string>
+    <string name="text_inputweight_US">Child\'s Weight (lb):</string>
+    <string name="Btext_calculate">Calculate</string>
+    <string name="text_feedduration">Feeding Duration:</string>
+    <string name="continuous">Continuously Feeding</string>
+    <string name="text_nightstoppageDuration">Overnight Feeding Stoppage Time:</string>
+    <string name="No_Weight_SI">Please Enter a Weight (in kg)</string>
+    <string name="No_Weight_US">Please Enter a Weight (in lb)</string>
+    <string name="Calories_needed_per_day">Calories needed per day per kilogram</string>
+    <string name="Milk_Provides">Milk or Formula Provides (calories/ounce)</string>
+    <string name="settings_MaxDurationLabel">Maximum Duration Between the Start of Feedings (minutes):</string>
+    <string name="settings_MaxStoppageLabel">Maximum Overnight Feeding Stoppage Time</string>
+    <string name="Reset">Reset to Default Values</string>
+    <string name="Submit">Submit</string>
+    <string name="Units">Units</string>
+    <string name="Unit1">SI (metric)</string>
+    <string name="Unit2">Imperial (US)</string>
+    <string name="InputHeader">Inputs:</string>
+    <string name="ResultsHeader">Results:</string>
+    <string name="DefaultResultValue">Enter a weight and press Calculate or move the Duration Slider to generate a volume and feed rate.</string>
+    <string name="TotalVolumeLabel">Total Volume in one Feeding:</string>
+    <string name="totalVolumeunits_SI">ml</string>
+    <string name="totalVolumeunits_US">fl oz</string>
+    <string name="FeedRateLabel">Feed Rate:</string>
+    <string name="feedRateunits_SI">ml/hr</string>
+    <string name="feedRateunits_US">fl oz/hr</string>
+    <string name="AboutHeader">About:</string>
+    <string name="About">How much milk or formula does your baby need to eat each feeding? It depends on how much your baby weighs. This app can take your baby\'s weight and tell you exactly how much pediatricians recommend they eat per feeding.
+
+This app is specially designed to help parents with children using feeding tubes. But it will work with bottle feeding as well. All you need to do is enter your child\'s weight and all other calculations are done for you.
+
+The first use is to calculate the correct feeding amount and rate based on the child\'s weight.
+The second purpose is to provide feeding rates over any duration of time so that you can slowly and easily transition the child from continuous feeds to bolus feeding.
+
+If you are bottle feeding the calculations still hold true!</string>
+    <string name="HowToUseHeader">How To Use This App:</string>
+    <string name="HowToUse">To use this app simply input your child\'s weight and press calculate or move the slider to the duration over which you plan to feed and the correct rate and total amount to be fed will be shown.</string>
+    <string name="DisclaimerHeader">Disclaimer:</string>
+    <string name="Disclaimer">This app and all numerical values and formulas are those recommended by my pediatrician, feeding specialist, and gastroenterologist. However this may not be right for you and your child. Please consult with your doctor.</string>
+    <string name="DonationsHeader">Donations:</string>
+    <string name="Donations">If you would like to donate please go to http://atomrockets.com and donate via paypal.</string>
+    <string name="CreditsHeader">Credits:</string>
+    <string name="Credits">This app was developed solely by and is the copyright of Allan Tribe of AtomRockets.com
+        Artwork done by Miriam Tribe of Madmim.com</string>
+    <string name="FullNightSleep">Full Night Sleep</string>
+</resources>
