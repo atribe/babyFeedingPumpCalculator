@@ -1,9 +1,15 @@
 apply plugin: 'com.android.application'
-
 android {
+    signingConfigs {
+        config {
+            keyAlias 'atomRocketsKey'
+            keyPassword 'bMweTen7'
+            storeFile file('D:/workspace/android/AtomRocketsKeygen.keystore')
+            storePassword 'extreme1'
+        }
+    }
     compileSdkVersion 10
     buildToolsVersion "24.0.2"
-
     defaultConfig {
         applicationId "com.atomrockets.continuoustobolus"
         minSdkVersion 8
@@ -13,11 +19,13 @@ android {
             targetCompatibility JavaVersion.VERSION_1_5
         }
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+
+dependencies {
 }
